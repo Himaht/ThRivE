@@ -1,13 +1,13 @@
 import { BottomNavigation, BottomNavigationAction } from '@material-ui/core'
-import { Home, Dashboard, Bookmark, Settings } from "@material-ui/icons"
+import { Assistant, Dashboard, Bookmark, Settings } from "@material-ui/icons"
 
 function BottomNav({ value, onChange }) {
     return (
-        <BottomNavigation value={value} onChange={(e, tab) => onChange(tab)}>
-            <BottomNavigationAction icon={<Home />}/>
-            <BottomNavigationAction icon={<Dashboard />}/>
-            <BottomNavigationAction icon={<Bookmark />}/>
-            <BottomNavigationAction icon={<Settings />}/>
+        <BottomNavigation showLabels value={value} onChange={(e, tab) => onChange(tab)}>
+            <BottomNavigationAction label="Talk" icon={<Assistant />}/>
+            <BottomNavigationAction label="Library" icon={<Dashboard />}/>
+            <BottomNavigationAction label="Records" icon={<Bookmark />}/>
+            <BottomNavigationAction label="Settings" icon={<Settings />}/>
         </BottomNavigation>
     )
 }
