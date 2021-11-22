@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css';
 import { CssBaseline, Grid } from "@material-ui/core"
 import TopNav from "./layout/TopNav"
 import Content from "./layout/Content"
 import BottomNav from "./layout/BottomNav"
+import StartupDialog from "./components/StartupDialog"
 
 
 const containerStyles = {
@@ -14,6 +15,32 @@ const containerStyles = {
 
 function App() {
   const [tab, setTab] = useState(0);
+  const [username, setUsername] = useState("");
+  const [startupDialogOpen, setStartupDialogOpen] = useState(false);
+
+  useEffect(
+    () => {
+      if (!(username === "")) {
+        localStorage.setItem('username', username);
+      }
+      console.log(username);
+    }, [username]
+  );
+
+  function renderStartupView() {
+    if(startupDialogOpen === false){
+      if (localStorage.getItem("username") === null) {
+        setStartupDialogOpen(true);
+      } else {
+        if (!(username === "")) {
+          setUsername(localStorage.getItem("username"))
+          console.log(username);
+        }
+        
+      }
+    }
+    return <StartupDialog isOpen={startupDialogOpen} setupUsername={setUsername}/>
+  }
 
   function renderView() {
     switch(tab) {
@@ -27,18 +54,19 @@ function App() {
         return <Content caption={"Settings"} />;
       default:
         return new Error("This view does not Yet, Are you from the future?");
-
-
     }
   }
+
   return (
     <div className="App">
       <Grid container direction="column">
         <TopNav />
         <div style={containerStyles}>
           {renderView()}
+          {renderStartupView()}
         </div>
         <BottomNav value={tab} onChange={setTab} />
+        
       </Grid>
       <CssBaseline />
     </div>

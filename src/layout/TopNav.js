@@ -29,12 +29,21 @@ function stringToColor(string) {
 
   
 function stringAvatar(name) {
+    name = (name === "") ? "Guest": name; 
+
+    let nameSplit = (name.split(' ').length > 1) ? `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`: `${name.split(' ')[0][0]}`;
+
     return {
       sx: {
         bgcolor: stringToColor(name),
       },
-      children: `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`,
+      children: nameSplit,
     };
+  }
+
+  function getUsername() {
+    let name = (localStorage.getItem("username") === null) ? "Guest": localStorage.getItem("username"); 
+    return name;
   }
 
 function TopNav() {
@@ -51,7 +60,7 @@ function TopNav() {
                     </Typography>
                 </IconButton>
                 <div style={{flexGrow: 1}} />
-                <Avatar color="inherit" onClick={() => setDialogOpen(true)} {...stringAvatar('Kent Dodds')} />
+                <Avatar color="inherit" onClick={() => setDialogOpen(true)} {...stringAvatar(getUsername())} />
             </Toolbar>
             <SwipeableDrawer open={open} onClose={() => setOpen(false)} onOpen={() => setOpen(true)} disableSwipeToOpen={false} PaperProps={{style: {minWidth: "50vw"}}}>
                 <h1>Hello</h1>
