@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { AppBar, Avatar, Toolbar, IconButton, Typography, SwipeableDrawer, Dialog, Slide } from '@material-ui/core';
-import { ArrowBackIos, Policy} from "@material-ui/icons";
+import { Policy } from "@material-ui/icons";
+
+import SettingsDialog from "../components/SettingsDialog";
 
 const SlideTransition = React.forwardRef(function TransitionComp(props, ref){
     return <Slide direction="up" ref={ref} {...props} />
@@ -66,16 +68,7 @@ function TopNav() {
                 <h1>Hello</h1>
             </SwipeableDrawer>
             <Dialog open={dialogOpen} fullScreen TransitionComponent={SlideTransition}>
-                <div>
-                <IconButton color="inherit" onClick={() => setDialogOpen(false)}>
-                    <ArrowBackIos />
-                    <Typography variant="h6" color="inherit" component="div">
-                        Settings
-                    </Typography>
-                </IconButton>
-                <div style={{flexGrow: 1}} />
-                </div>
-            <h1>Hello</h1>
+           <SettingsDialog setSettingsDialogOpen={setDialogOpen}/>
             </Dialog>
         </AppBar>
     )

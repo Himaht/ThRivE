@@ -10,9 +10,9 @@ function StartupDialog({ isOpen, setupUsername }) {
   const [open, setOpen] = useState(isOpen);
   const [input, setInput] = useState("");
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+//   const handleClickOpen = () => {
+//     setOpen(true);
+//   };
 
   const handleClose = () => {
     setOpen(false);
@@ -22,6 +22,7 @@ function StartupDialog({ isOpen, setupUsername }) {
     setupUsername(input)
     console.log("This is the User: "+ input);
     setOpen(false);
+    window.location.reload(false);
   };
 
   return (

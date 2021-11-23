@@ -51,9 +51,12 @@ function App() {
       case 2:
         return <Content caption={"Bookmark"} />;
       case 3:
-        return <Content caption={"Settings"} />;
+        setTab(0)
+        return <Content caption={"Let's talk"} />;
+        
       default:
-        return new Error("This view does not Yet, Are you from the future?");
+        setTab(0)
+        return <Content caption={"Let's talk"} />;
     }
   }
 
