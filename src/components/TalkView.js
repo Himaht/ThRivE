@@ -29,6 +29,10 @@ function TalkView() {
             { answer: "Sad", point: 2, problems: [] }
         ]
     })
+    const introFlow = () => {
+        setSayIntro(false); 
+        setIntroduction(introduction);
+    }
     const Logo = {
         title: "Thrive Logo",
         src: logo
@@ -59,7 +63,7 @@ function TalkView() {
                         { introduction.responses.map((response) => (
                             <div>
                                 <div style={{flexGrow: 8}} />
-                                <Button onClick={() => setSayIntro(false)} color="primary" size="large" variant="outlined">{response.answer}</Button>
+                                <Button onClick={() => introFlow()} color="primary" size="large" variant="outlined">{response.answer}</Button>
                                 <div style={{flexGrow: 2}} />
                             </div>
                         )) }
@@ -74,7 +78,7 @@ function TalkView() {
                         { ask.responses.map((response) => (
                             <div>
                                 <div style={{flexGrow: 8}} />
-                                <Button color="primary" size="large" variant="outlined">{response.answer}</Button>
+                                <Button onClick={() => setAsk(ask)} color="primary" size="large" variant="outlined">{response.answer}</Button>
                                 <div style={{flexGrow: 2}} />
                             </div>
                         )) }
