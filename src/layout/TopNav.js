@@ -65,7 +65,7 @@ function TopNav() {
                 <Avatar color="inherit" onClick={() => setDialogOpen(true)} {...stringAvatar(getUsername())} />
             </Toolbar>
             <SwipeableDrawer open={open} onClose={() => setOpen(false)} onOpen={() => setOpen(true)} disableSwipeToOpen={false} PaperProps={{style: {minWidth: "50vw"}}}>
-                <h1>Hello</h1>
+                <h1>No Records Yet</h1>
             </SwipeableDrawer>
             <Dialog open={dialogOpen} fullScreen TransitionComponent={SlideTransition}>
            <SettingsDialog setSettingsDialogOpen={setDialogOpen}/>

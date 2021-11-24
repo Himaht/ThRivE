@@ -5,6 +5,7 @@ import TopNav from "./layout/TopNav"
 import Content from "./layout/Content"
 import BottomNav from "./layout/BottomNav"
 import StartupDialog from "./components/StartupDialog"
+import TalkView from "./components/TalkView"
 
 
 const containerStyles = {
@@ -45,11 +46,16 @@ function App() {
   function renderView() {
     switch(tab) {
       case 0:
-        return <Content caption={"Let's talk"} />;
+        return (
+          <div>
+            <TalkView />
+          </div>
+        );
+
       case 1:
         return <Content caption={"Library"} />;
       case 2:
-        return <Content caption={"Bookmark"} />;
+        return <Content caption={"Records"} />;
       case 3:
         setTab(0)
         return <Content caption={"Let's talk"} />;
