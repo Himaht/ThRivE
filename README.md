@@ -1,3 +1,10 @@
+# ThRivE
+Creating Mental Health Awareness through IT
+
+Guide is hosted @ 
+https://thrive.campusinsider.net
+=========================================================
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
