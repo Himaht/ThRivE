@@ -1,6 +1,7 @@
 import React from 'react'
 import { Problems } from "../data/Problems";
-import { Button, TextField, Typography} from "@material-ui/core";
+// import { Button, TextField, Typography} from "@material-ui/core";
+import ProblemCard from "../components/ProblemCard";
 
 function LibraryView() {
     return (
@@ -8,8 +9,7 @@ function LibraryView() {
             {Problems.map((problem, key) => {
           return (
             <div key={key}>
-            <Typography variant="h6" color="inherit" component="div">{problem.caption}</Typography>
-            <Typography variant="p" color="inherit" component="div">{problem.brief}</Typography>
+                <ProblemCard caption={problem.caption} brief={problem.brief} summary={problem.summary} symptoms={problem.symptoms} treatment={problem.treatment} help={problem.help}/>
             </div>
           );
         })}
