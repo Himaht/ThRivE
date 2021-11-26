@@ -1,20 +1,22 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css';
-import { CssBaseline, Grid } from "@material-ui/core"
+import { CssBaseline, Grid, Box } from "@material-ui/core"
 import TopNav from "./layout/TopNav"
 import Content from "./layout/Content"
 import BottomNav from "./layout/BottomNav"
+import ResponsiveDrawer from "./layout/SideNav"
 import StartupDialog from "./components/StartupDialog"
 import TalkView from "./components/TalkView"
+import LibraryView from "./components/LibraryView"
 
 
 const containerStyles = {
-  height: "calc(100vh - 112px)",
-  overflow: "auto",
-  textAlign: "center"
+  overflow: "auto"
 }
 
-function App() {
+const drawerWidth = 240;
+
+function App(props) {
   const [tab, setTab] = useState(0);
   const [username, setUsername] = useState("");
   const [startupDialogOpen, setStartupDialogOpen] = useState(false);
@@ -53,7 +55,11 @@ function App() {
         );
 
       case 1:
-        return <Content caption={"Library"} />;
+        return (
+          <div>
+            <LibraryView />
+          </div>
+        );
       case 2:
         return <Content caption={"Records"} />;
       case 3:
@@ -66,19 +72,31 @@ function App() {
     }
   }
 
+ 
   return (
-    <div className="App">
-      <Grid container direction="column">
-        <TopNav />
-        <div style={containerStyles}>
-          {renderView()}
-          {renderStartupView()}
+    <Box >
+        <div className="App">
+          <Grid container direction="column">
+            <TopNav />
+            <ResponsiveDrawer />
+            <Box
+              component="main"
+              sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` }, mt: 5, mb: 5,
+              ml: { sm: `${drawerWidth}px` }}}            > 
+             <div style={containerStyles}>
+              {renderView()}
+              {renderStartupView()}
+            </div>
+            </Box>
+            
+            <BottomNav value={tab} onChange={setTab} />
+            
+          </Grid>
+          <CssBaseline />
         </div>
-        <BottomNav value={tab} onChange={setTab} />
-        
-      </Grid>
-      <CssBaseline />
-    </div>
+
+      </Box>
+    
   );
 }
 
