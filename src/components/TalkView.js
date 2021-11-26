@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { Skeleton, Typography, Button} from "@mui/material";
 import logo from '../logo.svg';
-// import { Skeleton, Typography, loading } from "@material-ui/core";
-// import { Policy } from "@material-ui/icons";
 
 function getFirstName() {
     let name = (localStorage.getItem("username") === null) ? "Guest": localStorage.getItem("username"); 
@@ -57,7 +55,7 @@ function TalkView() {
           {
               sayIntro ? (
                   <div>
-                    <Typography variant="h5">{introduction.question}</Typography>
+                    <Typography variant="h5" style={{textAlign: "left", padding: "10px"}} >{introduction.question}</Typography>
   
                     <div style={{textAlign: "right", padding: "10px"}}>
                         { introduction.responses.map((response) => (
@@ -74,11 +72,11 @@ function TalkView() {
                 <div>                
                     <Typography variant="h5">{ask.question}</Typography>
     
-                    <div style={{textAlign: "right", padding: "10px"}}>
+                    <div style={{textAlign: "right", paddingRight: "10px", margin: "10px"}}>
                         { ask.responses.map((response) => (
                             <div>
                                 <div style={{flexGrow: 8}} />
-                                <Button onClick={() => setAsk(ask)} color="primary" size="large" variant="outlined">{response.answer}</Button>
+                                <Button onClick={() => setAsk(ask)} color="primary" size="large" variant="outlined" style={{mt: 1, mb: 1}} >{response.answer}</Button>
                                 <div style={{flexGrow: 2}} />
                             </div>
                         )) }
