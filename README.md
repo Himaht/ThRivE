@@ -2,7 +2,7 @@
 Creating Mental Health Awareness through IT
 
 Guide is hosted @ 
-https://thriveapp.vercel.app
+https://thriveapp.now.sh
 =========================================================
 
 # Getting Started with Create React App
