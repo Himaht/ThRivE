@@ -53,7 +53,7 @@ function TopNav() {
     const [dialogOpen, setDialogOpen] = useState(false)
 
     return (
-        <AppBar position="static" color="default">
+        <AppBar position="fixed" color="default" style={{top: 0, bottom: "auto"}}>
             <Toolbar>
                 <IconButton color="inherit" onClick={() => setOpen(!open)}>
                     <Policy />

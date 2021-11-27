@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { Skeleton, Typography, Button} from "@mui/material";
 import logo from '../logo.svg';
-// import { Skeleton, Typography, loading } from "@material-ui/core";
-// import { Policy } from "@material-ui/icons";
+import { Conversations } from "../data/Conversations";
 
 function getFirstName() {
     let name = (localStorage.getItem("username") === null) ? "Guest": localStorage.getItem("username"); 
@@ -11,6 +10,7 @@ function getFirstName() {
   }
 
 function TalkView() {
+    const [nextAsk, setNextAsk] = useState(0)
     const [sayIntro, setSayIntro] = useState(true)
     const [introduction, setIntroduction] = useState({
         question: "Hello "+ getFirstName()+", I am your mental health companion. always here to help you thrive",
@@ -29,6 +29,19 @@ function TalkView() {
             { answer: "Sad", point: 2, problems: [] }
         ]
     })
+    // let convos = Conversations;
+    // let convo = {};
+    const conversationFlow = () => {
+        if (!(nextAsk + 1 > (Conversations.length) )){
+            setAsk(Conversations[nextAsk]);
+            console.log(Conversations.length);
+            if (!(nextAsk + 2 > (Conversations.length))){
+                setNextAsk(nextAsk + 1);
+                console.log(nextAsk);
+            }
+        }
+    };
+
     const introFlow = () => {
         setSayIntro(false); 
         setIntroduction(introduction);
@@ -57,7 +70,7 @@ function TalkView() {
           {
               sayIntro ? (
                   <div>
-                    <Typography variant="h5">{introduction.question}</Typography>
+                    <Typography variant="h5" style={{textAlign: "left", padding: "10px"}} >{introduction.question}</Typography>
   
                     <div style={{textAlign: "right", padding: "10px"}}>
                         { introduction.responses.map((response) => (
@@ -74,11 +87,11 @@ function TalkView() {
                 <div>                
                     <Typography variant="h5">{ask.question}</Typography>
     
-                    <div style={{textAlign: "right", padding: "10px"}}>
+                    <div style={{textAlign: "right", paddingRight: "10px", margin: "10px"}}>
                         { ask.responses.map((response) => (
                             <div>
                                 <div style={{flexGrow: 8}} />
-                                <Button onClick={() => setAsk(ask)} color="primary" size="large" variant="outlined">{response.answer}</Button>
+                                <Button onClick={() => conversationFlow()} color="primary" size="large" variant="outlined" style={{mt: 1, mb: 1}} >{response.answer}</Button>
                                 <div style={{flexGrow: 2}} />
                             </div>
                         )) }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BottomNavigation, BottomNavigationAction, Dialog, Slide } from '@material-ui/core'
+import { BottomNavigation, BottomNavigationAction, Dialog, Slide, AppBar } from '@material-ui/core'
 import { Assistant, Dashboard, Bookmark, Settings } from "@material-ui/icons"
 
 import SettingsDialog from "../components/SettingsDialog";
@@ -14,12 +14,17 @@ function BottomNav({ value, onChange }) {
     const [dialogOpen, setDialogOpen] = useState(false)
     return (
         <div>
-            <BottomNavigation showLabels value={value} onChange={(e, tab) => onChange(tab)}>
+        <AppBar position="fixed" color="default" style={{top: "auto", bottom: 0}}>
+            <BottomNavigation showLabels value={value} onChange={(e, tab) => onChange(tab)} 
+            sx={{
+                display: { xs: 'block', sm: 'none' }
+              }}>
                 <BottomNavigationAction label="Talk" icon={<Assistant />}/>
                 <BottomNavigationAction label="Library" icon={<Dashboard />}/>
                 <BottomNavigationAction label="Records" icon={<Bookmark />}/>
                 <BottomNavigationAction label="Settings" icon={<Settings />} onClick={() => setDialogOpen(true)} />
             </BottomNavigation>
+        </AppBar>
             <Dialog open={dialogOpen} fullScreen TransitionComponent={SlideTransition}>
                 <SettingsDialog setSettingsDialogOpen={setDialogOpen}/>
             </Dialog>
