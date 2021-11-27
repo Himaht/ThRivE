@@ -1,5 +1,6 @@
-export const Problems =[
+export const Problems = [
     {
+        "key": 0,
         "caption": "Anxiety disorders",
         "brief": "Anxiety disorders is a group of mental health disorders that includes generalised anxiety disorders, social phobias, specific phobias (for example, agoraphobia and claustrophobia), panic disorders, obsessive compulsive disorder (OCD) and post-traumatic stress disorder. Untreated, anxiety disorders can lead to significant impairment on people’s daily lives.",
         "summary": [
@@ -33,6 +34,7 @@ export const Problems =[
         ]
     },
     {
+        "key": 1,
         "caption": "Behavioural and emotional disorders in children",
         "brief": "Common behaviour disorders in children include oppositional defiant disorder (ODD), conduct disorder (CD) and attention deficit hyperactivity disorder (ADHD). Treatment for these mental health disorders can include therapy, education and medication.",
         "summary": [
@@ -87,6 +89,7 @@ export const Problems =[
         ]
     },
     {
+        "key": 2,
         "caption": "Bipolar affective disorder",
         "brief": "Bipolar affective disorder is a type of mood disorder, previously referred to as ‘manic depression’. A person with bipolar disorder experiences episodes of mania (elation) and depression. The person may or may not experience psychotic symptoms. The exact cause is unknown, but a genetic predisposition has been clearly established. Environmental stressors can also trigger episodes of this mental illness.",
         "summary": [
@@ -148,6 +151,7 @@ export const Problems =[
         ]
     },
     {
+        "key": 3,
         "caption": "Depression",
         "brief": "Depression is a mood disorder characterised by lowering of mood, loss of interest and enjoyment, and reduced energy. It is not just feeling sad. There are different types and symptoms of depression. There are varying levels of severity and symptoms related to depression. Symptoms of depression can lead to increased risk of suicidal thoughts or behaviours.",
         "summary": [
@@ -224,6 +228,7 @@ export const Problems =[
         ]
     },
     {
+        "key": 4,
         "caption": "Dissociation and dissociative disorders",
         "brief": "Dissociation is a mental process where a person disconnects from their thoughts, feelings, memories or sense of identity. Dissociative disorders include dissociative amnesia, dissociative fugue, depersonalisation disorder and dissociative identity disorder.",
         "summary": [
@@ -266,6 +271,7 @@ export const Problems =[
         ]
     },
     {
+        "key": 5,
         "caption": "Eating disorders",
         "brief": "Eating disorders include anorexia, bulimia nervosa and other binge eating disorders. Eating disorders affect females and males and can have serious psychological and physical consequences.",
         "summary": [
@@ -318,6 +324,7 @@ export const Problems =[
         ]
     },
     {
+        "key": 6,
         "caption": "Obsessive compulsive disorder",
         "brief": "Obsessive compulsive disorder (OCD) is an anxiety disorder. Obsessions are recurrent thoughts, images or impulses that are intrusive and unwanted. Compulsions are time-consuming and distressing repetitive rituals. Ttreatments include cognitive behaviour therapy (CBT), and medications",
         "summary": [
@@ -380,6 +387,7 @@ export const Problems =[
         ]
     },
     {
+        "key": 7,
         "caption": "Paranoia",
         "brief": "Paranoia is the irrational and persistent feeling that people are ‘out to get you’. Paranoia may be a symptom of conditions including paranoid personality disorder, delusional (paranoid) disorder and schizophrenia. Treatment for paranoiainclude medications and psychological support.",
         "summary": [
@@ -424,6 +432,7 @@ export const Problems =[
         ]
     },
     {
+        "key": 8,
         "caption": "Post-traumatic stress disorder",
         "brief": "Post-traumatic stress disorder (PTSD) is a mental health condition that can develop as a response to people who have experienced any traumatic event. This can be a car or other serious accident, physical or sexual assault, war-related events or torture, or natural disasters such as bushfires or floods.",
         "summary": [
@@ -467,6 +476,7 @@ export const Problems =[
         ]
     },
     {
+        "key": 9,
         "caption": "Psychosis",
         "brief": "People affected by psychosis can experience delusions, hallucinations and confused thinking.. Psychosis can occur in a number of mental illnesses, including drug-induced psychosis, schizophrenia and mood disorders. Medication and psychological support can relieve, or even eliminate, psychotic symptoms.",
         "summary": [
@@ -499,6 +509,7 @@ export const Problems =[
         ]
     },
     {
+        "key": 10,
         "caption": "Schizophrenia",
         "brief": "Schizophrenia is a complex psychotic disorder characterised by disruptions to thinking and emotions, and a distorted perception of reality. Symptoms of schizophrenia vary widely but may include hallucinations, delusions, thought disorder, social withdrawal, lack of motivation and impaired thinking and memory. People with schizophrenia have a high risk of suicide. Schizophrenia is not a split personality.",
         "summary": [
