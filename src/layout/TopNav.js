@@ -52,6 +52,7 @@ function TopNav() {
     const [open, setOpen] = useState(false)
     const [dialogOpen, setDialogOpen] = useState(false)
 
+
     return (
         <AppBar position="fixed" color="default" style={{top: 0, bottom: "auto"}}>
             <Toolbar>
@@ -68,7 +69,7 @@ function TopNav() {
                 <h1>No Records Yet</h1>
             </SwipeableDrawer>
             <Dialog open={dialogOpen} fullScreen TransitionComponent={SlideTransition}>
-           <SettingsDialog setSettingsDialogOpen={setDialogOpen}/>
+              <SettingsDialog setSettingsDialogOpen={setDialogOpen}/>
             </Dialog>
         </AppBar>
     )
