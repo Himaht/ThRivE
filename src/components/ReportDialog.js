@@ -8,17 +8,17 @@ function getUsername() {
   return name;
 }
 
-function ReportDialog({ setSettingsDialogOpen, activeProblems }) {
+function ReportDialog({ setReportDialogOpen, activeProblems }) {
 
   const handleClose = () => {
-    setSettingsDialogOpen(false)
+    setReportDialogOpen(false)
   };
 
   return (
     <div>
       <AppBar position="static" color="default">
             <Toolbar>
-                <IconButton color="inherit" onClick={() => setSettingsDialogOpen(false)}>
+                <IconButton color="inherit" onClick={() => setReportDialogOpen(false)}>
                     <ArrowBackIos />
                     <Typography variant="h6" color="inherit" component="div">
                     {getUsername()}'s Report

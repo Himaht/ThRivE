@@ -185,7 +185,7 @@ function TalkView() {
             </div>)
           }
             <Dialog open={reportDialogOpen} fullScreen TransitionComponent={SlideTransition}>
-              <ReportDialog setSettingsDialogOpen={setReportDialogOpen} activeProblems={activeProblems}/>
+              <ReportDialog setReportDialogOpen={setReportDialogOpen} activeProblems={activeProblems}/>
             </Dialog>
         </div>
     )
