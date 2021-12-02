@@ -7,12 +7,12 @@ function LibraryView() {
     return (
         <div>
             {Problems.map((problem, key) => {
-          return (
-            <div key={key}>
-                <ProblemCard caption={problem.caption} brief={problem.brief} summary={problem.summary} symptoms={problem.symptoms} treatment={problem.treatment} help={problem.help}/>
-            </div>
-          );
-        })}
+              return (
+                <div key={key}>
+                    <ProblemCard caption={problem.caption} brief={problem.brief} summary={problem.summary} symptoms={problem.symptoms} treatment={problem.treatment} help={problem.help}/>
+                </div>
+              );
+            })}
         </div>
     )
 }
