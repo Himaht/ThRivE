@@ -143,8 +143,26 @@ function TalkView() {
         } else {
             evaluateResponsesByPoints();
             setReportIsReady(true);
+            saveRecord();
         }
-        
+    }
+
+    const saveRecord = () => {
+        // Check if exists in localStorage as records
+        if(localStorage.getItem('records')){
+            // If exists, get records
+            let records = JSON.parse(localStorage.getItem('records'));
+            // Add new record to records
+            records.push(activeProblems);
+            // Save records to localStorage
+            localStorage.setItem('records', JSON.stringify(records));
+        } else {
+            // If not exists, create new array and add new record
+            let records = [];
+            records.push(activeProblems);
+            // Save records to localStorage
+            localStorage.setItem('records', JSON.stringify(records));
+        }
     }
 
     const Logo = {
