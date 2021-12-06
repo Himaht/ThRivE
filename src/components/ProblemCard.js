@@ -21,7 +21,7 @@ const ExpandMore = styled((props) => {
 }));
 
 
-function ProblemCard({ caption, brief, summary, symptoms, treatment, help }) {
+function ProblemCard({ problem }) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -32,10 +32,10 @@ function ProblemCard({ caption, brief, summary, symptoms, treatment, help }) {
     <Card sx={{ m: {xs: 1, sm: 5 } }}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {caption}
+          {problem.caption}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {brief}
+          {problem.brief}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -54,7 +54,7 @@ function ProblemCard({ caption, brief, summary, symptoms, treatment, help }) {
           <Typography paragraph>Facts:</Typography>
           <Typography paragraph>
             <ul>
-            {summary.map((item, key) => {
+            {problem.summary.map((item, key) => {
                 return ( <li key={key}>{item}</li> );
               })}
               </ul>
@@ -63,7 +63,7 @@ function ProblemCard({ caption, brief, summary, symptoms, treatment, help }) {
           <Typography paragraph>Symptoms:</Typography>
           <Typography paragraph>
             <ul>
-            {symptoms.map((item, key) => {
+            {problem.symptoms.map((item, key) => {
                 return ( <li key={key}>{item}</li> );
               })}
               </ul>
@@ -72,7 +72,7 @@ function ProblemCard({ caption, brief, summary, symptoms, treatment, help }) {
           <Typography paragraph>Treatment:</Typography>
           <Typography paragraph>
             <ul>
-            {treatment.map((item, key) => {
+            {problem.treatment.map((item, key) => {
                 return ( <li key={key}>{item}</li> );
               })}
               </ul>
@@ -81,7 +81,7 @@ function ProblemCard({ caption, brief, summary, symptoms, treatment, help }) {
           <Typography paragraph>Help:</Typography>
           <Typography paragraph>
             <ul>
-            {help.map((item, key) => {
+            {problem.help.map((item, key) => {
                 return ( <li key={key}>{item}</li> );
               })}
             </ul>
