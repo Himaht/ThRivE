@@ -60,12 +60,7 @@ function App(props) {
             <LibraryView />
           </div>
         );
-      case 2:
-        return <Content caption={"Records"} />;
-      case 3:
-        setTab(0)
-        return <Content caption={"Let's talk"} />;
-        
+
       default:
         setTab(0)
         return <Content caption={"Let's talk"} />;
