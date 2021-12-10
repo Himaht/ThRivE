@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AppBar, Avatar, Toolbar, IconButton, Typography, SwipeableDrawer, Dialog, Slide } from '@material-ui/core';
+import { AppBar, Avatar, Toolbar, IconButton, Typography, Dialog, Slide } from '@material-ui/core';
 import { Policy } from "@material-ui/icons";
 
 import SettingsDialog from "../components/SettingsDialog";
@@ -49,14 +49,13 @@ function stringAvatar(name) {
   }
 
 function TopNav() {
-    const [open, setOpen] = useState(false)
     const [dialogOpen, setDialogOpen] = useState(false)
 
 
     return (
         <AppBar position="fixed" color="default" style={{top: 0, bottom: "auto"}}>
             <Toolbar>
-                <IconButton color="inherit" onClick={() => setOpen(!open)}>
+                <IconButton color="inherit">
                     <Policy />
                     <Typography variant="h6" color="inherit" component="div">
                         ThRivE
@@ -65,9 +64,6 @@ function TopNav() {
                 <div style={{flexGrow: 1}} />
                 <Avatar color="inherit" onClick={() => setDialogOpen(true)} {...stringAvatar(getUsername())} />
             </Toolbar>
-            <SwipeableDrawer open={open} onClose={() => setOpen(false)} onOpen={() => setOpen(true)} disableSwipeToOpen={false} PaperProps={{style: {minWidth: "50vw"}}}>
-                <h1>No Records Yet</h1>
-            </SwipeableDrawer>
             <Dialog open={dialogOpen} fullScreen TransitionComponent={SlideTransition}>
               <SettingsDialog setSettingsDialogOpen={setDialogOpen}/>
             </Dialog>

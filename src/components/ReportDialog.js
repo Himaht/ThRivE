@@ -42,7 +42,7 @@ function ReportDialog({ setReportDialogOpen, activeProblems }) {
                 {activeProblems.filter(problem => problem.points >= 1).map((problem, key) =>  {
                   return (
                     <div key={key}>
-                        <ProblemCard caption={problem.caption} brief={problem.brief} summary={problem.summary} symptoms={problem.symptoms} treatment={problem.treatment} help={problem.help}/>
+                        <ProblemCard problem={problem}/>
                     </div>
                   );
                 })}

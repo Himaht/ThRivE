@@ -10,7 +10,7 @@ export const Conversations = {
             key: 0,
             question: `Hello ${ getFirstName() }, I am your mental health companion. always here to help you thrive`,
             responses: [
-                { answer: "okay, Let's Talk", point: 1, problems: [] }
+                { answer: "okay, Let's Talk", point: 0, problems: [] }
             ],
             problems: []
         }
@@ -47,8 +47,8 @@ export const Conversations = {
             key: 15,
             question: "I am going to take a guess and say you are not a child of 12 year old or less, right?",
             responses: [
-                { answer: "Yes, I am not", point: 2, problems: [] },
-                { answer: "No, actually I am", point: 0, problems: [] },
+                { answer: "Yes, I am not", point: 0, problems: [] },
+                { answer: "No, actually I am", point: 2, problems: [] },
                 { answer: "I don't know", point: 1, problems: [] }
             ],
             problems: [1]
