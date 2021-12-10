@@ -2,7 +2,7 @@
 Creating Mental Health Awareness through IT
 
 Guide is hosted @ 
-https://thrive.campusinsider.net
+https://thriveapp.now.sh
 =========================================================
 
 # Getting Started with Create React App

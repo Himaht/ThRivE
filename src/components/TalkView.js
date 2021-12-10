@@ -152,6 +152,7 @@ function TalkView() {
         if(localStorage.getItem('records')){
             // If exists, get records
             let records = JSON.parse(localStorage.getItem('records'));
+          
             //create a new record
             let newRecord = {
                 date: new Date(),
@@ -175,6 +176,7 @@ function TalkView() {
 
             // Add new record to records
             records.push(newRecord);
+          
             // Save records to localStorage
             localStorage.setItem('records', JSON.stringify(records));
         }
