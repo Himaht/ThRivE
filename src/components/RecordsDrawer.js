@@ -16,6 +16,9 @@ function RecordsDrawer({ setRecordsDrawerOpen }) {
     // get records from local storage
     useEffect(() => {
         let records = JSON.parse(localStorage.getItem("records")) || [];
+        records.sort((a, b) => {
+                return new Date(b.date) - new Date(a.date);
+            });
         console.log(records);
         setRecords(records);
     }, []);
