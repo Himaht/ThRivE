@@ -112,24 +112,24 @@ function TalkView() {
     }
 
     const updatePoints = (points = 0, problems = []) => {
-        // TODO: Check If point is not zero or problems is not empty then
+        // Check If point is not zero or problems is not empty then
         if(!(points === 0 || problems === [])) {
-            // TODO: Spread array into mutable object
+            // Spread array into mutable object
             let newProblems = [...activeProblems];
-            // TODO: Update points with problem as key
+            // Update points with problem as key
             problems.map((problemKey, key) => {
                 newProblems[problemKey].points = newProblems[problemKey].points + points;
                 console.log(`Updated Points: ${newProblems[problemKey].points} `);
                 return true
               });
-            // TODO: Set state
+            // Set state
             setActiveProblems(newProblems);
         }
         
 
     }
     const evaluateResponsesByPoints = () => {
-        // TODO: Sort Problems By points in descending order
+        // Sort Problems By points in descending order
         console.log(activeProblems);
         activeProblems.sort(function(a, b){return b.points-a.points});
         console.log(activeProblems);
@@ -137,7 +137,7 @@ function TalkView() {
 
     const generateReport = () => {
         if(reportIsReady){
-            // TODO: Open Report Dialog
+            // Open Report Dialog
             setReportDialogOpen(true);
             console.log("Generating Report");
         } else {
@@ -152,14 +152,29 @@ function TalkView() {
         if(localStorage.getItem('records')){
             // If exists, get records
             let records = JSON.parse(localStorage.getItem('records'));
+            //create a new record
+            let newRecord = {
+                date: new Date(),
+                problems: activeProblems
+            }
+
             // Add new record to records
-            records.push(activeProblems);
+            records.push(newRecord);
+
             // Save records to localStorage
             localStorage.setItem('records', JSON.stringify(records));
         } else {
             // If not exists, create new array and add new record
             let records = [];
-            records.push(activeProblems);
+
+            //create a new record
+            let newRecord = {
+                date: new Date(),
+                problems: activeProblems
+            }
+
+            // Add new record to records
+            records.push(newRecord);
             // Save records to localStorage
             localStorage.setItem('records', JSON.stringify(records));
         }
